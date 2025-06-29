@@ -1,4 +1,6 @@
 import re
+import json
+
 ch = []
 
 textfile = open('test.txt', 'r', encoding='utf8')
@@ -15,13 +17,41 @@ for _ch in tempstring:
     if not _ch.isdigit():
         ch.append(_ch)
         #print(ch)
-print('----------------------------------------')
-print(ch)
-print('----------------------------------------')
-for x in ch:
-    print(x)
+
+#print('----------------------------------------')
+#print(ch)
+#print('----------------------------------------')
+#for x in ch:
+#    print(x)
 
 textfile.close()
-input('----------------------------------------\nPress Enter to continue...')
+
+
+
+
+#with open("file.json", "w") as f:
+#    json.dump([{"f_name": f_name, "l_name": l_name}], f)
+
+
+
+
+toLongText = ""
+for _ch in tempstring:
+    if toLongText == "":
+        toLongText = f'"{_ch}"'
+    else:
+        toLongText = f'{toLongText},"{_ch}"'
+
+toLongText = (f'[{toLongText}]')
+
+with open("Unwanted_list.txt", "w", encoding="utf-8") as outfile:
+    outfile.write(toLongText)
+
+
+
+
+
+
+#input('----------------------------------------\nPress Enter to continue...')
 
 #alt="(\S+)"\ssrc
