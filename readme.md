@@ -1,0 +1,1 @@
+paste page source to '__test.txt__' then run '__twitch-regex.py__'
